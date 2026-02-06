@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kujin Production</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #202a44;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            opacity: 0.85;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        button {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 12px 32px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            color: #202a44;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LANDING PAGE -->
+    <div class="container" id="landing">
+        <h1>Kujin Production</h1>
+        <h2>Thank you for visiting!</h2>
+        <p>Welcome to my porforlio...</p>
+        <button onclick="enterSite()">Okay</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container hidden" id="content">
+        <h1>Kujin Production</h1>
+        <h2>Porforlio Under Construction</h2>
+        <p>Something is being built here. Stay tuned!</p>
+    </div>
+
+    <script>
+        function enterSite() {
+            document.getElementById("landing").classList.add("hidden");
+            document.getElementById("content").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
