@@ -82,24 +82,31 @@ body {
 /* FREELANCE BADGE */
 .freelance-badge {
     margin-top: 30px;
-    border: 1px solid rgba(255,255,255,0.5);
-    padding: 10px 22px;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 10px 24px;
     cursor: pointer;
-    transition: 0.3s ease;
     font-size: 0.95rem;
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
 }
 
 .freelance-badge:hover {
     background: white;
     color: #202a44;
+    animation: none;
 }
 
 /* SCROLL INDICATOR */
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 90px;
     text-align: center;
-    opacity: 0.7;
+    opacity: 0.8;
     cursor: pointer;
 }
 
@@ -110,13 +117,13 @@ body {
 }
 
 .scroll-indicator .arrow {
-    font-size: 1.5rem;
-    animation: bounce 1.8s infinite;
+    font-size: 1.6rem;
+    animation: bounce 1.6s infinite;
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+    50% { transform: translateY(12px); }
 }
 
 /* SECTION */
@@ -141,17 +148,40 @@ body {
     opacity: 0.9;
 }
 
-/* WHAT I DO */
-.skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
+/* PROJECTS */
+.projects {
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
 }
 
-.skill {
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 40px 20px;
+.project {
+    margin-bottom: 50px;
+    border-left: 3px solid rgba(255,255,255,0.4);
+    padding-left: 20px;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.project span {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-bottom: 12px;
+}
+
+.project p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* MONTAGE */
+.montage a {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 /* PRICING */
@@ -257,10 +287,49 @@ footer a {
     <h2>About Me</h2>
     <p>
         I am <strong>Cyrus Macrohon</strong>, a 19-year-old aspiring filmmaker based in
-        <strong>Davao City, Philippines</strong>.
-        I focus on cinematic storytelling through film, photography, and visual design.
-        I like quiet moments, imperfect frames, and stories that feel real.
+        <strong>Davao City, Philippines</strong>. I focus on cinematic storytelling through
+        film, editing, and visual design. I’m drawn to quiet moments, imperfect frames,
+        and stories that feel honest and human.
     </p>
+</section>
+
+<section class="section">
+    <h2>Projects</h2>
+
+    <div class="projects">
+        <div class="project">
+            <h3>MUGNA</h3>
+            <span>Lead Cinematographer & Editor — 2026</span>
+            <p>
+                Lester is a struggling writer obsessed with proving his nagging mother wrong.
+                After isolating himself to finish his masterpiece, he finally achieves success,
+                only to return to an empty, silent home. He gains the career he always wanted,
+                but realizes he has lost the only person he was trying to impress.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>ALIPUSTA</h3>
+            <span>Lead Cinematographer & Main Editor — 2024</span>
+            <p>
+                Three loyal friends. One girl. A lifetime of shared history destroyed in an instant.
+                When the dust settles on their broken bond, will they find mercy in the ending,
+                or only the shame of what they lost?
+            </p>
+        </div>
+
+        <div class="project montage">
+            <h3>One Man ar"ME"</h3>
+            <span>Montage</span>
+            <p>
+                An event montage exploring movement, rhythm, and emotion through the night.
+                <br><br>
+                <a href="https://www.facebook.com/share/v/1Dc33kGu9E/" target="_blank">
+                    Watch on Facebook
+                </a>
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="section hidden" id="pricing">
@@ -271,9 +340,9 @@ footer a {
             <h3>Film Editing</h3>
             <span>₱150 per minute</span>
             <p>
-                Film projects require heavier editing, color grading, sound design,
-                and more resources. This rate reflects the time and equipment needed
-                to achieve a cinematic result.
+                Film edits involve heavier storytelling work, color grading,
+                sound design, and longer processing time. Pricing reflects
+                the resources and attention required for cinematic output.
             </p>
         </div>
 
@@ -281,9 +350,9 @@ footer a {
             <h3>YouTube / TikTok Editing</h3>
             <span>₱100 per minute</span>
             <p>
-                Social media edits are lighter and faster-paced, usually requiring
-                simpler cuts and effects. Pricing is lower due to lighter workload
-                and shorter turnaround time.
+                Social media edits are lighter and faster-paced, often requiring
+                simpler cuts and effects. Lower pricing reflects shorter turnaround
+                and reduced resource usage.
             </p>
         </div>
 
@@ -292,7 +361,7 @@ footer a {
             <span>Rates depend on project</span>
             <p>
                 For cinematography work, equipment must be provided by the client.
-                Rates may vary depending on shoot complexity, duration, and location.
+                Rates vary depending on shoot duration, complexity, and location.
             </p>
         </div>
     </div>
