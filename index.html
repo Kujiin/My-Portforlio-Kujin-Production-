@@ -18,6 +18,45 @@ body {
     color: #ffffff;
 }
 
+/* LANDING */
+.landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.landing h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.landing p {
+    opacity: 0.85;
+    margin-bottom: 10px;
+}
+
+.landing button {
+    margin-top: 20px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.landing button:hover {
+    background: white;
+    color: #202a44;
+}
+
+/* MAIN CONTENT */
+.hidden {
+    display: none;
+}
+
 /* HEADER */
 header {
     text-align: center;
@@ -56,33 +95,40 @@ header p {
 
 /* GALLERY */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
     max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px 60px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
 }
 
 .card {
     background-color: #f4f1ea;
-    padding: 15px;
-    transition: transform 0.3s ease;
+    padding: 18px 18px 28px;
+    width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 .card img {
     width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     display: block;
 }
 
 .card p {
     color: #000;
-    margin-top: 10px;
+    margin-top: 16px;
     font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.4;
 }
 
 /* FOOTER */
@@ -106,6 +152,19 @@ footer a:hover {
 
 <body>
 
+<!-- LANDING PAGE -->
+<div class="landing" id="landing">
+    <div>
+        <h1>Kujin Production</h1>
+        <p>Thank you for visiting!</p>
+        <p>Welcome to my portfolio...</p>
+        <button onclick="enterSite()">Okay</button>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main" class="hidden">
+
 <header>
     <h1>Kujin Production</h1>
     <p>Graphic Designer • Video Editor • Photographer • Cinematographer</p>
@@ -123,22 +182,11 @@ footer a:hover {
 
 <section class="gallery">
     <div class="card">
-        <img src="images/ex1.jpg" alt="Behind the scenes">
-        <p>Behind the scenes moments during short film production.</p>
+        <img src="images/ex2.jpg" alt="Camera gear">
+        <p>
+            My favorite equipment — the Sony A7 IV paired with the Sigma 28–70mm f/2.8.
+        </p>
     </div>
 
     <div class="card">
-        <img src="images/ex2.jpg" alt="Gear setup">
-        <p>My everyday creative tools and filming setup.</p>
-    </div>
-</section>
-
-<footer>
-    <p>
-        <a href="https://instagram.com/kujinee" target="_blank">@kujinee</a><br>
-        officiallykujin@gmail.com
-    </p>
-</footer>
-
-</body>
-</html>
+        <img src="images/ex1.jpg" alt=
