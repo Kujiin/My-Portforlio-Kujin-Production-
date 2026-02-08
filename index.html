@@ -1,94 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kujin Production</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kujin Production</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        body {
-            background-color: #202a44;
-            color: #ffffff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+body {
+    background-color: #202a44;
+    color: #ffffff;
+}
 
-        .container {
-            text-align: center;
-            padding: 20px;
-        }
+/* HEADER */
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
 
-        h1 {
-            font-size: 2.6rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
 
-        h2 {
-            font-size: 1.4rem;
-            font-weight: normal;
-            opacity: 0.85;
-            margin-bottom: 25px;
-        }
+header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
 
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
+/* ABOUT */
+.about {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-        button {
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-            padding: 12px 32px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
 
-        button:hover {
-            background-color: #ffffff;
-            color: #202a44;
-        }
+.about p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
 
-        .hidden {
-            display: none;
-        }
-    </style>
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+.card {
+    background-color: #f4f1ea;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card p {
+    color: #000;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 20px 50px;
+    opacity: 0.9;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+</style>
 </head>
+
 <body>
 
-    <!-- LANDING PAGE -->
-    <div class="container" id="landing">
-        <h1>Kujin Production</h1>
-        <h2>Thank you for visiting!</h2>
-        <p>Welcome to my porforlio...</p>
-        <button onclick="enterSite()">Okay</button>
+<header>
+    <h1>Kujin Production</h1>
+    <p>Graphic Designer • Video Editor • Photographer • Cinematographer</p>
+</header>
+
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        I am <strong>Cyrus Macrohon</strong>, a 19-year-old aspiring filmmaker based in
+        <strong>Davao City, Philippines</strong>.
+        I focus on cinematic storytelling through film, photography, and visual design.
+        My work is inspired by real moments, emotions, and quiet stories that often go unnoticed.
+    </p>
+</section>
+
+<section class="gallery">
+    <div class="card">
+        <img src="images/ex1.jpg" alt="Behind the scenes">
+        <p>Behind the scenes moments during short film production.</p>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="container hidden" id="content">
-        <h1>Kujin Production</h1>
-        <h2>Porforlio Under Construction</h2>
-        <p>Something is being built here. Stay tuned!</p>
+    <div class="card">
+        <img src="images/ex2.jpg" alt="Gear setup">
+        <p>My everyday creative tools and filming setup.</p>
     </div>
+</section>
 
-    <script>
-        function enterSite() {
-            document.getElementById("landing").classList.add("hidden");
-            document.getElementById("content").classList.remove("hidden");
-        }
-    </script>
+<footer>
+    <p>
+        <a href="https://instagram.com/kujinee" target="_blank">@kujinee</a><br>
+        officiallykujin@gmail.com
+    </p>
+</footer>
 
 </body>
 </html>
