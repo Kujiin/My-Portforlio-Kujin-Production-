@@ -251,6 +251,84 @@ footer a {
     opacity: 1;
     transform: translateY(0);
 }
+
+.contact-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: white;
+    color: #202a44;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    z-index: 1000;
+}
+
+.contact-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 998;
+}
+
+.contact-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.contact-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    background: #1a2238;
+    padding: 30px;
+    transform: translateX(100%);
+    transition: 0.4s ease;
+    z-index: 999;
+}
+
+.contact-panel.active {
+    transform: translateX(0);
+}
+
+.contact-panel input,
+.contact-panel textarea,
+.contact-panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: none;
+}
+
+.contact-success {
+    display: none;
+    text-align: center;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .contact-panel {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        top: auto;
+        transform: translateY(100%);
+    }
+    .contact-panel.active {
+        transform: translateY(0);
+    }
+}
 </style>
 </head>
 
@@ -372,10 +450,33 @@ footer a {
 
 </div>
 
+<div class="contact-btn" id="contactBtn" onclick="toggleContact()">✉</div>
+
+<div class="contact-overlay" id="contactOverlay" onclick="toggleContact()"></div>
+
+<div class="contact-panel" id="contactPanel">
+    <h3>Contact Me</h3>
+
+    <form name="contact" method="POST" data-netlify="true" onsubmit="showSuccess(event)">
+        <input type="hidden" name="form-name" value="contact">
+
+        <div id="contactForm">
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+        </div>
+
+        <div class="contact-success" id="contactSuccess">
+            <p>Thank you for reaching out.<br>I’ll get back to you soon.</p>
+        </div>
+    </form>
+</div>
+
 <script>
 function enterSite() {
     document.getElementById("landing").style.display = "none";
     document.getElementById("main").classList.remove("hidden");
+    document.getElementById("contactBtn").style.display = "flex";
 }
 
 function scrollDown() {
@@ -397,6 +498,16 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+function toggleContact() {
+    document.getElementById("contactPanel").classList.toggle("active");
+    document.getElementById("contactOverlay").classList.toggle("active");
+}
+
+function showSuccess(e) {
+    document.getElementById("contactForm").style.display = "none";
+    document.getElementById("contactSuccess").style.display = "block";
+}
 </script>
 
 </body>
