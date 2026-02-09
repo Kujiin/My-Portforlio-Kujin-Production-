@@ -19,9 +19,6 @@ body {
     color: #ffffff;
 }
 
-.hidden { display: none; }
-
-/* LANDING */
 .landing {
     height: 100vh;
     display: flex;
@@ -30,8 +27,14 @@ body {
     text-align: center;
 }
 
-.landing h1 { font-size: 3.2rem; margin-bottom: 12px; }
-.landing p { opacity: 0.85; }
+.landing h1 {
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+}
+
+.landing p {
+    opacity: 0.85;
+}
 
 .landing button {
     margin-top: 25px;
@@ -49,7 +52,10 @@ body {
     color: #202a44;
 }
 
-/* HERO */
+.hidden {
+    display: none;
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -61,10 +67,16 @@ body {
     position: relative;
 }
 
-.hero h1 { font-size: 3.6rem; margin-bottom: 15px; }
-.hero p { font-size: 1.15rem; opacity: 0.9; }
+.hero h1 {
+    font-size: 3.6rem;
+    margin-bottom: 15px;
+}
 
-/* FREELANCE BADGE */
+.hero p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+}
+
 .freelance-badge {
     margin-top: 30px;
     border: 1px solid rgba(255,255,255,0.6);
@@ -86,7 +98,6 @@ body {
     animation: none;
 }
 
-/* SCROLL */
 .scroll-indicator {
     position: absolute;
     bottom: 90px;
@@ -95,22 +106,32 @@ body {
     cursor: pointer;
 }
 
+.scroll-indicator span {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
 .scroll-indicator .arrow {
     font-size: 1.6rem;
     animation: bounce 1.6s infinite;
 }
 
 @keyframes bounce {
-    0%,100% { transform: translateY(0); }
+    0%, 100% { transform: translateY(0); }
     50% { transform: translateY(12px); }
 }
 
-/* SECTIONS */
 .section {
     padding: 100px 20px;
     max-width: 1200px;
     margin: auto;
     text-align: center;
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
 }
 
 .about p {
@@ -121,7 +142,6 @@ body {
     opacity: 0.9;
 }
 
-/* PROJECTS */
 .projects {
     max-width: 900px;
     margin: auto;
@@ -134,7 +154,28 @@ body {
     padding-left: 20px;
 }
 
-/* PRICING */
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.project span {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-bottom: 12px;
+}
+
+.project p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.montage a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
 .pricing {
     max-width: 900px;
     margin: auto;
@@ -148,17 +189,30 @@ body {
     padding: 30px;
 }
 
-/* GALLERY */
+.price-card h3 {
+    margin-bottom: 10px;
+}
+
+.price-card span {
+    font-weight: bold;
+}
+
+.price-card p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
 .gallery {
     display: flex;
     justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
+    margin-top: 60px;
 }
 
 .card {
     background-color: #f4f1ea;
-    padding: 18px;
+    padding: 18px 18px 28px;
     width: 340px;
 }
 
@@ -170,80 +224,32 @@ body {
 
 .card p {
     color: #000;
-    margin-top: 12px;
+    margin-top: 16px;
+    font-size: 0.95rem;
     text-align: center;
 }
 
-/* FOOTER */
 footer {
     padding: 80px 20px;
     text-align: center;
+    opacity: 0.9;
 }
 
-/* SCROLL REVEAL */
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: 0.8s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* FLOATING CONTACT BUTTON */
-.contact-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: white;
-    color: #202a44;
-    padding: 14px 18px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-/* CONTACT PANEL */
-.contact-panel {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 320px;
-    height: 100vh;
-    background: #1a2238;
-    padding: 30px;
-    transform: translateX(100%);
-    transition: 0.4s ease;
-    z-index: 999;
-}
-
-.contact-panel.active {
-    transform: translateX(0);
-}
-
-.contact-panel h3 {
-    margin-bottom: 20px;
-}
-
-.contact-panel input,
-.contact-panel textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: none;
-}
-
-.contact-panel button {
-    width: 100%;
-    padding: 10px;
-    background: white;
-    color: #202a44;
-    border: none;
-    cursor: pointer;
 }
 </style>
 </head>
@@ -254,6 +260,7 @@ footer {
     <div>
         <h1>Kujin Production</h1>
         <p>Thank you for visiting</p>
+        <p>Welcome to my portfolio</p>
         <button onclick="enterSite()">Okay</button>
     </div>
 </div>
@@ -263,44 +270,106 @@ footer {
 <section class="hero">
     <h1>Kujin Production</h1>
     <p>Graphic Designer • Video Editor • Photographer • Cinematographer</p>
+
     <div class="freelance-badge" onclick="togglePricing()">Open for freelancing</div>
-    <div class="scroll-indicator" onclick="scrollDown()"><div class="arrow">↓</div></div>
+
+    <div class="scroll-indicator" onclick="scrollDown()">
+        <span>scroll</span>
+        <div class="arrow">↓</div>
+    </div>
 </section>
 
 <section class="section about reveal">
-    <p>I am <strong>Cyrus Macrohon</strong>, a filmmaker based in Davao City.</p>
+    <h2>About Me</h2>
+    <p>
+        I am <strong>Cyrus Macrohon</strong>, a 19-year-old aspiring filmmaker based in
+        <strong>Davao City, Philippines</strong>. I focus on cinematic storytelling through
+        film, editing, and visual design. I’m drawn to quiet moments, imperfect frames,
+        and stories that feel honest and human.
+    </p>
+</section>
+
+<section class="section reveal">
+    <h2>Recent Projects</h2>
+
+    <div class="projects">
+        <div class="project reveal">
+            <h3>MUGNA</h3>
+            <span>Lead Cinematographer & Editor — 2026</span>
+            <p>
+                Lester is a struggling writer obsessed with proving his nagging mother wrong.
+                After isolating himself to finish his masterpiece, he finally achieves success,
+                only to return to an empty, silent home.
+            </p>
+        </div>
+
+        <div class="project reveal">
+            <h3>ALIPUSTA</h3>
+            <span>Lead Cinematographer & Main Editor — 2024</span>
+            <p>
+                Three loyal friends. One girl. A lifetime of shared history destroyed in an instant.
+            </p>
+        </div>
+
+        <div class="project montage reveal">
+            <h3>UIC - CCS Christmas Party (Montage)</h3>
+            <span>Director, Lead Cinematographer & Main Editor</span>
+            <p>
+                An event montage exploring movement, rhythm, and emotion through the night.
+                <br><br>
+                <a href="https://www.facebook.com/share/v/1Dc33kGu9E/" target="_blank">Watch on Facebook</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section hidden reveal" id="pricing">
+    <h2>Freelance Rates</h2>
+
+    <div class="pricing">
+        <div class="price-card reveal">
+            <h3>Film Editing</h3>
+            <span>₱150 per minute</span>
+            <p>Heavier storytelling, grading, sound design, and longer processing time.</p>
+        </div>
+
+        <div class="price-card reveal">
+            <h3>YouTube / TikTok Editing</h3>
+            <span>₱100 per minute</span>
+            <p>Faster-paced edits with simpler cuts and reduced resource usage.</p>
+        </div>
+
+        <div class="price-card reveal">
+            <h3>Cinematography</h3>
+            <span>Rates depend on project</span>
+            <p>Equipment must be provided by the client.</p>
+        </div>
+    </div>
 </section>
 
 <section class="section reveal">
     <h2>Selected Moments</h2>
+
     <div class="gallery">
         <div class="card reveal">
             <img src="images/ex1.jpg">
-            <p>Sony A7 IV + Sigma 28–70mm</p>
+            <p>My favorite equipment — the Sony A7 IV paired with the Sigma 28–70mm f/2.8.</p>
         </div>
+
         <div class="card reveal">
             <img src="images/ex2.jpg">
-            <p>Behind the scenes</p>
+            <p>One of my favorite scenes captured during a short film shoot.</p>
         </div>
     </div>
 </section>
 
 <footer class="reveal">
-    <p>@kujinee<br>officiallykujin@gmail.com</p>
+    <p>
+        <a href="https://instagram.com/kujinee" target="_blank">@kujinee</a><br>
+        officiallykujin@gmail.com
+    </p>
 </footer>
 
-</div>
-
-<div class="contact-btn" onclick="toggleContact()">✉</div>
-
-<div class="contact-panel" id="contact">
-    <h3>Contact Me</h3>
-    <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message" rows="5" required></textarea>
-        <button type="submit">Send</button>
-    </form>
 </div>
 
 <script>
@@ -314,15 +383,17 @@ function scrollDown() {
 }
 
 function togglePricing() {
-    document.getElementById("pricing")?.classList.toggle("hidden");
-}
-
-function toggleContact() {
-    document.getElementById("contact").classList.toggle("active");
+    const pricing = document.getElementById("pricing");
+    pricing.classList.toggle("hidden");
+    pricing.scrollIntoView({ behavior: "smooth" });
 }
 
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting && e.target.classList.add("active"));
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
 }, { threshold: 0.15 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
