@@ -1,9 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="favicon.png">
-
 <title>Kujin Production</title>
 
 <style>
@@ -18,6 +18,7 @@ body {
     background-color: #202a44;
     color: #ffffff;
 }
+
 .landing {
     height: 100vh;
     display: flex;
@@ -50,9 +51,11 @@ body {
     background: white;
     color: #202a44;
 }
+
 .hidden {
     display: none;
 }
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -73,6 +76,7 @@ body {
     font-size: 1.15rem;
     opacity: 0.9;
 }
+
 .freelance-badge {
     margin-top: 30px;
     border: 1px solid rgba(255,255,255,0.6);
@@ -93,6 +97,7 @@ body {
     color: #202a44;
     animation: none;
 }
+
 .scroll-indicator {
     position: absolute;
     bottom: 90px;
@@ -116,6 +121,7 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(12px); }
 }
+
 .section {
     padding: 100px 20px;
     max-width: 1200px;
@@ -127,6 +133,7 @@ body {
     font-size: 2.2rem;
     margin-bottom: 30px;
 }
+
 .about p {
     max-width: 800px;
     margin: auto;
@@ -134,6 +141,7 @@ body {
     line-height: 1.7;
     opacity: 0.9;
 }
+
 .projects {
     max-width: 900px;
     margin: auto;
@@ -162,10 +170,12 @@ body {
     line-height: 1.6;
     opacity: 0.9;
 }
+
 .montage a {
     color: #ffffff;
     text-decoration: underline;
 }
+
 .pricing {
     max-width: 900px;
     margin: auto;
@@ -191,6 +201,7 @@ body {
     opacity: 0.9;
     line-height: 1.6;
 }
+
 .gallery {
     display: flex;
     justify-content: center;
@@ -218,7 +229,6 @@ body {
     text-align: center;
 }
 
-/* FOOTER */
 footer {
     padding: 80px 20px;
     text-align: center;
@@ -230,10 +240,22 @@ footer a {
     text-decoration: none;
     font-weight: bold;
 }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
 </head>
 
 <body>
+
 <div class="landing" id="landing">
     <div>
         <h1>Kujin Production</h1>
@@ -242,15 +264,14 @@ footer a {
         <button onclick="enterSite()">Okay</button>
     </div>
 </div>
+
 <div id="main" class="hidden">
 
 <section class="hero">
     <h1>Kujin Production</h1>
     <p>Graphic Designer • Video Editor • Photographer • Cinematographer</p>
 
-    <div class="freelance-badge" onclick="togglePricing()">
-        Open for freelancing
-    </div>
+    <div class="freelance-badge" onclick="togglePricing()">Open for freelancing</div>
 
     <div class="scroll-indicator" onclick="scrollDown()">
         <span>scroll</span>
@@ -258,7 +279,7 @@ footer a {
     </div>
 </section>
 
-<section class="section about">
+<section class="section about reveal">
     <h2>About Me</h2>
     <p>
         I am <strong>Cyrus Macrohon</strong>, a 19-year-old aspiring filmmaker based in
@@ -268,97 +289,81 @@ footer a {
     </p>
 </section>
 
-<section class="section">
+<section class="section reveal">
     <h2>Recent Projects</h2>
 
     <div class="projects">
-        <div class="project">
+        <div class="project reveal">
             <h3>MUGNA</h3>
             <span>Lead Cinematographer & Editor — 2026</span>
             <p>
                 Lester is a struggling writer obsessed with proving his nagging mother wrong.
                 After isolating himself to finish his masterpiece, he finally achieves success,
-                only to return to an empty, silent home. He gains the career he always wanted,
-                but realizes he has lost the only person he was trying to impress.
+                only to return to an empty, silent home.
             </p>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
             <h3>ALIPUSTA</h3>
             <span>Lead Cinematographer & Main Editor — 2024</span>
             <p>
                 Three loyal friends. One girl. A lifetime of shared history destroyed in an instant.
-                When the dust settles on their broken bond, will they find mercy in the ending,
-                or only the shame of what they lost?
             </p>
         </div>
 
-        <div class="project montage">
+        <div class="project montage reveal">
             <h3>UIC - CCS Christmas Party (Montage)</h3>
             <span>Director, Lead Cinematographer & Main Editor</span>
             <p>
                 An event montage exploring movement, rhythm, and emotion through the night.
                 <br><br>
-                <a href="https://www.facebook.com/share/v/1Dc33kGu9E/" target="_blank">
-                    Watch on Facebook
-                </a>
+                <a href="https://www.facebook.com/share/v/1Dc33kGu9E/" target="_blank">Watch on Facebook</a>
             </p>
         </div>
     </div>
 </section>
 
-<section class="section hidden" id="pricing">
+<section class="section hidden reveal" id="pricing">
     <h2>Freelance Rates</h2>
 
     <div class="pricing">
-        <div class="price-card">
+        <div class="price-card reveal">
             <h3>Film Editing</h3>
             <span>₱150 per minute</span>
-            <p>
-                Film edits involve heavier storytelling work, color grading,
-                sound design, and longer processing time. Pricing reflects
-                the resources and attention required for cinematic output.
-            </p>
+            <p>Heavier storytelling, grading, sound design, and longer processing time.</p>
         </div>
 
-        <div class="price-card">
+        <div class="price-card reveal">
             <h3>YouTube / TikTok Editing</h3>
             <span>₱100 per minute</span>
-            <p>
-                Social media edits are lighter and faster-paced, often requiring
-                simpler cuts and effects. Lower pricing reflects shorter turnaround
-                and reduced resource usage.
-            </p>
+            <p>Faster-paced edits with simpler cuts and reduced resource usage.</p>
         </div>
 
-        <div class="price-card">
+        <div class="price-card reveal">
             <h3>Cinematography</h3>
             <span>Rates depend on project</span>
-            <p>
-                For cinematography work, equipment must be provided by the client.
-                Rates vary depending on shoot duration, complexity, and location.
-            </p>
+            <p>Equipment must be provided by the client.</p>
         </div>
     </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
     <h2>Selected Moments</h2>
 
     <div class="gallery">
-        <div class="card">
+        <div class="card reveal">
             <img src="images/ex1.jpg">
             <p>My favorite equipment — the Sony A7 IV paired with the Sigma 28–70mm f/2.8.</p>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
             <img src="images/ex2.jpg">
             <p>One of my favorite scenes captured during a short film shoot.</p>
         </div>
     </div>
 </section>
 
-<footer>
+<footer class="reveal">
     <p>
         <a href="https://instagram.com/kujinee" target="_blank">@kujinee</a><br>
         officiallykujin@gmail.com
@@ -382,8 +387,17 @@ function togglePricing() {
     pricing.classList.toggle("hidden");
     pricing.scrollIntoView({ behavior: "smooth" });
 }
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
-
